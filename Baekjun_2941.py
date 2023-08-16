@@ -22,7 +22,7 @@ def count_croatian_alphabet_1(word):
 
 
 # count_croatian_alphabet_2 = lambda word: len(word) - sum([word.count(alphabet) for alphabet in ["c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z="]])
-encoding_table = ["c=", "c-", "dz=", "d-", "lj", "nj", "s=", "y="]
+encoding_table = ["c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z=", "x="]
 
 def count_croatian_alphabet_2(word):
     cnt = sum([word.count(alphabet) * (len(alphabet) - 1) for alphabet in encoding_table])
