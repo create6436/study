@@ -58,8 +58,8 @@ def count_croatian_alphabet_4(word):
 if __name__ == "__main__":
     import random_string
 
-    n = int(input())
-    word = random_string.random_string(n, list("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789=- ") + ["c=", "c-", "dz=", "d-", "lj", "nj", "s=", "y="])
+    m = int(input())
+    word = random_string.random_string(m, list("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789=- ") + ["c=", "c-", "dz=", "d-", "lj", "nj", "s=", "y="])
     print(word)
     result = count_croatian_alphabet_3(word)
     print(result)
