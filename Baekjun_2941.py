@@ -71,7 +71,7 @@ if __name__ == "__main__":
 
     for _ in range(10):
         m = int(input("문자열의 길이를 입력하세요:  "))
-        word = random_string.random_string(m, list("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789=- ") + encoding_table)
+        word = random_string.random_string(m, list("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789=-") + encoding_table)
         print("word: ", word)
         result = counter.count_croatian_alphabet(word)
         print("코르아티아 알파벳을 포함한 문자열의 길이:", result)
