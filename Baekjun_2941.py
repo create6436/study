@@ -28,6 +28,14 @@ def count_croatian_alphabet_2(word):
     cnt = sum([word.count(alphabet) * (len(alphabet) - 1) for alphabet in encoding_table])
     return len(word) - cnt
 
+def overlapping_encoding(encoding_table):
+    for i, encoding1 in enumerate(encoding_table):
+        for j, encoding2 in enumerate(encoding_table):
+            if i != j and encoding1.endswith(encoding2[0]):
+                return True
+    return False
+
+
 
 # 크로아티아 알파벳을 찾는 함수 count_croatian_alphabet_3()을 구현하기
 # 단 반복문, 람다식, 내장함수를 사용하지 않고 구현하기
@@ -57,6 +65,13 @@ def count_croatian_alphabet_4(word):
 
 if __name__ == "__main__":
     import random_string
+
+    # 겹치는 경우가 있는지 체크
+    has_overlap = overlapping_encoding(encoding_table)
+    if has_overlap:
+        print("인코딩 테이블 리스트에 겹치는 경우가 있습니다.")
+    else:
+        print("인코딩 테이블 리스트에 겹치는 경우가 없습니다.")
 
     m = int(input("문자열의 길이를 입력하세요:  "))
     word = random_string.random_string(m, list("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789=- ") + ["c=", "c-", "dz=", "d-", "lj", "nj", "s=", "y="])
