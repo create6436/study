@@ -1,7 +1,13 @@
 import random_string
 import EncodingTable
 
-encoding_table = EncodingTable.make_encodingTable()
+class CountCroatianAlphabet:
+    def __init__(self, encoding_table) -> None:
+        self.encoding_table = encoding_table
+        assert EncodingTable.check_encodingTable(encoding_table), "Encoding table is not valid."
+
+    def count_croatian_alphabet(self, word):
+        return count_croatian_alphabet_2(word, self.encoding_table)
 
 def count_croatian_alphabet_1(word, encoding_table):
     count = 0
@@ -54,8 +60,18 @@ def count_croatian_alphabet_4(word, encoding_table):
 
 
 if __name__ == "__main__":
-    m = int(input("문자열의 길이를 입력하세요:  "))
-    word = random_string.random_string(m, list("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789=- ") + ["c=", "c-", "dz=", "d-", "lj", "nj", "s=", "y="])
-    print(word)
-    result = count_croatian_alphabet_3(word, encoding_table)
-    print("코르아티아 알파벳을 포함한 문자열의 길이:", result)
+    for _ in range(10):
+        encoding_table = EncodingTable.make_encodingTable()
+        print("encoding_table: ", encoding_table)
+        try:
+            counter = CountCroatianAlphabet(encoding_table)
+        except AssertionError as e:
+            continue
+        break
+
+    for _ in range(10):
+        m = int(input("문자열의 길이를 입력하세요:  "))
+        word = random_string.random_string(m, list("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789=- ") + encoding_table)
+        print("word: ", word)
+        result = counter.count_croatian_alphabet(word)
+        print("코르아티아 알파벳을 포함한 문자열의 길이:", result)
