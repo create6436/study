@@ -58,8 +58,8 @@ def count_croatian_alphabet_4(word):
 if __name__ == "__main__":
     import random_string
 
-    m = int(input())
+    m = int(input("문자열의 길이를 입력하세요:  "))
     word = random_string.random_string(m, list("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789=- ") + ["c=", "c-", "dz=", "d-", "lj", "nj", "s=", "y="])
     print(word)
     result = count_croatian_alphabet_3(word)
-    print(result)
+    print("코르아티아 알파벳을 포함한 문자열의 길이:", result)
