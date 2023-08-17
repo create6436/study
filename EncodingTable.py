@@ -1,0 +1,30 @@
+import random
+import random_string
+
+def make_encodingTable():
+    # 인코딩 테이블의 길이를 랜덤하게 설정
+    length = random.randint(1, 10)
+    encoding_table = []
+
+    # 인코딩 테이블에 포함될 문자열을 랜덤하게 생성
+    for _ in range(length):
+        n = random.randint(2, 3)
+        encoding_table.append(random_string.random_string(n, list("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789=- ")))
+
+    # 인코딩 테이블 검사
+    print(encoding_table)
+
+    for i, first in enumerate(encoding_table):
+        for second in encoding_table[i + 1:]:
+            if (first in second or second in first) or \
+               (first[0] == second[-1] or second[0] == first[-1]):
+                continue
+            
+
+    print("인코딩 테이블에 서로를 포함하거나 시작과 끝 알파벳이 같은 문자열이 없습니다.")
+
+    return encoding_table  
+
+# 인코딩 테이블 생성 및 검사
+if __name__ == "__main__":
+    make_encodingTable()

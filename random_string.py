@@ -8,14 +8,17 @@ def random_string(n, candidates):
     if not candidates:
         return ""
 
-    for _ in range(n):
-        rand = random.randint(0, len(candidates) - 1)
-        result += candidates[rand]
+    while n > 0:
+        rand = random.choice(candidates)
+        length = len(rand)
+
+        if n >= length:
+            result += rand
+            n -= length
 
     return result
 
-
 if __name__ == "__main__":
 
-    n = 100
+    n = 10
     print(random_string(n, list("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789=- ") + ["c=", "c-", "dz=", "d-", "lj", "nj", "s=", "y="]))
