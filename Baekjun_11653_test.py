@@ -25,7 +25,3 @@ def test_factorization():
             assert is_prime(factor), f"{factor} is not a prime number."
 
         print("test_case:", test_case, "/ my_answer:", my_answer)
-
-
-if __name__ == "__main__": 
-    test_factorization()
