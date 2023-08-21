@@ -17,7 +17,7 @@ def factorization(n):
        
         # 남은 n이 소수인지 검사
         if not is_prime(n):
-            return None
+            assert False, f"{n} is not a prime number."
 
     return factors
 

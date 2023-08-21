@@ -1,5 +1,8 @@
 # 주어진 숫자가 소수인지 검사하는 함수
 def is_prime(num):
+    if num < 2:  # 2보다 작은 숫자는 소수가 아님
+        assert False, f"{num} is not a prime number."
+
     i = 2
     while i * i <= num:  # i가 num의 제곱근보다 작거나 같을 때까지 반복
         if num % i == 0 or num % (i + 2) == 0:
