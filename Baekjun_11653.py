@@ -1,3 +1,6 @@
+from prime_util import is_prime
+
+# 소인수분해 함수
 def factorization(n):
     factors = []
     i = 2
@@ -11,6 +14,10 @@ def factorization(n):
 
     if n > 1:  # 남은 n이 1보다 크면, 이것도 소인수 중 하나
         factors.append(n)  # 남은 n을 소인수 리스트에 추가
+       
+        # 남은 n이 소수인지 검사
+        if not is_prime(n):
+            return None
 
     return factors
 
