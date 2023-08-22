@@ -12,13 +12,18 @@ def is_balanced(expression):
 
     return not stack  # 모든 괄호를 확인한 후 스택이 비어있다면 균형이 잘 맞춰진 것입니다.
 
-while True:
-    input_str = input()  # 문자열을 입력받습니다.
-    if input_str == '.':
-        break  # 입력이 '.'이면 프로그램을 종료합니다.
 
-    result = is_balanced(input_str)  # 입력된 문자열의 균형을 확인합니다.
-    if result:
-        print("yes")  # 균형이 맞다면 "yes"를 출력합니다.
-    else:
-        print("no")  # 균형이 깨졌다면 "no"를 출력합니다.
+def main():
+    while True:
+        input_str = input()  # 문자열을 입력받습니다.
+        if input_str == '.':
+            break  # 입력이 '.'이면 프로그램을 종료합니다.
+
+        result = is_balanced(input_str)  # 입력된 문자열의 균형을 확인합니다.
+        if result:
+            print("yes")  # 균형이 맞다면 "yes"를 출력합니다.
+        else:
+            print("no")  # 균형이 깨졌다면 "no"를 출력합니다.
+
+if __name__ == "__main__":
+    main()
