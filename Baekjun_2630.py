@@ -44,11 +44,15 @@ def main(N):
     # 하얀색과 파란색 색종이 개수 계산
     white_result, blue_result = count_color_paper(paper, N)
 
-    return white_result, blue_result
+    return white_result, blue_result, paper
 
 if __name__ == "__main__":
     N = int(input())
-    white_result, blue_result = main(N)
+    white_result, blue_result, exam_paper = main(N)
+    # 예제 정보 출력
+    for row in exam_paper:
+        print(' '.join(map(str, row)))    
+
     # 결과 출력
     print(white_result)
     print(blue_result)
