@@ -37,21 +37,13 @@ def count_color_paper(paper, N):
     
     return white_count, blue_count
 
-def main(N):
+if __name__ == "__main__":
     # 전체 종이의 한 변 길이
-    paper = create_example(N)  # 종이의 각 행에 색 정보 저장
+    N = int(input())
+    paper = [list(map(int, input().split())) for _ in range(N)]  # 종이의 각 행에 색 정보 저장
 
     # 하얀색과 파란색 색종이 개수 계산
     white_result, blue_result = count_color_paper(paper, N)
-
-    return white_result, blue_result, paper
-
-if __name__ == "__main__":
-    N = int(input())
-    white_result, blue_result, exam_paper = main(N)
-    # 예제 정보 출력
-    for row in exam_paper:
-        print(' '.join(map(str, row)))    
 
     # 결과 출력
     print(white_result)
